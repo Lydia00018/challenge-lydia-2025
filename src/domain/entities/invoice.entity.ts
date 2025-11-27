@@ -1,15 +1,4 @@
-export type InvoiceStatus = 'issued' | 'draft' | 'paid';
-
-export interface Invoice {
-  readonly code: string;
-  readonly issuedDate: string;
-  readonly ownerName: string;
-  readonly contactName: string;
-  readonly subtotal: number;
-  readonly taxes: number;
-  readonly total: number;
-  readonly status: InvoiceStatus;
-}
+export type InvoiceStatus = 'issued' | 'draft';
 
 export interface RawInvoiceData {
   'Invoice Code': string;
@@ -20,4 +9,15 @@ export interface RawInvoiceData {
   Taxes: string;
   Total: string;
   Status: string;
+}
+
+export interface Invoice {
+  code: string;
+  issuedDate: string;
+  ownerName: string;
+  contactName: string;
+  subtotal: number;
+  taxes: number;
+  total: number;
+  status: InvoiceStatus;
 }

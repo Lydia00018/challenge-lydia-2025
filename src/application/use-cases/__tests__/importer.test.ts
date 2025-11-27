@@ -1,4 +1,4 @@
-import { Importer } from '../application/use-cases/importer';
+import { Importer } from '../importer';
 
 describe('importer', () => {
   it('should import successfully the import-success file', async () => {

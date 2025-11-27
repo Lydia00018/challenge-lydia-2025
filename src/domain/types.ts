@@ -1,14 +1,16 @@
+import { Invoice } from './entities/invoice.entity';
+
 export interface ValidationError {
-  readonly property: string;
+  readonly property: keyof Invoice;
   readonly message: 'required' | 'invalid';
 }
 
 export interface FailedInvoice {
   readonly line: number;
-  readonly errors: ReadonlyArray<ValidationError>;
+  readonly errors: ValidationError[];
 }
 
 export interface ImportResult {
-  readonly ok: ReadonlyArray<any>;
-  readonly ko: ReadonlyArray<FailedInvoice>;
+  readonly ok: Invoice[];
+  readonly ko: FailedInvoice[];
 }
